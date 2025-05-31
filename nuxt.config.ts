@@ -39,10 +39,10 @@ export default defineNuxtConfig({
         },
         { name: 'theme-color', content: '#ffc600' },
 
-        { property: 'og:site_name', content: 'Prolar: аренда авто в Москве' },
+        { property: 'og:site_name', content: 'Мицар: аренда авто в Москве' },
         { property: 'og:type', content: 'website' },
         { property: 'og:locale', content: 'ru_RU' },
-        { property: 'og:title', content: 'Prolar: аренда авто в Москве' },
+        { property: 'og:title', content: 'Мицар: аренда авто в Москве' },
         {
           property: 'og:description',
           content: 'Первый день аренды — бесплатно!',

@@ -1,19 +1,22 @@
 <template>
   <header class="header">
     <div class="header__container">
-      <UiLogo class="header__logo" />
+      <UiLogo />
 
-      <nav class="nav">
+      <nav class="header__nav">
         <ul>
           <li>
-            <NuxtLink class="nav__link" to="/#about">О нас</NuxtLink>
+            <NuxtLink class="header__nav-link" to="/#about">О нас</NuxtLink>
           </li>
           <li>
-            <NuxtLink class="nav__link" to="/#catalog">Каталог авто</NuxtLink>
+            <NuxtLink class="header__nav-link" to="/#catalog"
+              >Каталог авто</NuxtLink
+            >
           </li>
         </ul>
       </nav>
-      <div class="contacts">
+
+      <div class="header__contacts">
         <BaseLink :link="'whatsapp'" />
         <BaseLink :link="'telegram'" />
         <BaseLink :link="'phone'" />
@@ -22,7 +25,7 @@
       <button
         aria-label="Меню"
         aria-expanded="false"
-        class="mobile-nav-btn"
+        class="header__mobile-btn"
         @click="toggleDropdown"
       >
         <svg>
@@ -53,19 +56,6 @@ const closeDropdown = () => {
 a {
   font-size: 1.1rem;
 }
-.mobile-nav-btn {
-  background: none;
-  border: none;
-
-  @include tablet {
-    display: none;
-  }
-  svg {
-    height: 30px;
-    width: 30px;
-    stroke: $main-color;
-  }
-}
 
 .header {
   z-index: 100;
@@ -78,6 +68,7 @@ a {
   @include tablet {
     height: 70px;
   }
+
   &__container {
     display: flex;
     justify-content: space-between;
@@ -85,39 +76,54 @@ a {
     gap: 15px;
     @include container;
   }
-  &__logo {
-    margin-right: auto;
-  }
-}
 
-.nav {
-  display: none;
-  @include tablet {
-    display: block;
+  &__nav {
+    display: none;
+    margin-left: auto;
+    @include tablet {
+      display: block;
+    }
+
+    ul {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
   }
-  ul {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-  }
-  &__link {
+
+  &__nav-link {
     &:hover {
       color: $main-color;
       transition: color 0.2s ease;
     }
   }
-}
-.contacts {
-  display: none;
-  @include tablet {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+
+  &__contacts {
+    display: none;
+    @include tablet {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    a {
+      fill: $main-color;
+      color: $main-color;
+    }
   }
 
-  a {
-    fill: $main-color;
-    color: $main-color;
+  &__mobile-btn {
+    background: none;
+    border: none;
+
+    @include tablet {
+      display: none;
+    }
+    svg {
+      height: 30px;
+      width: 30px;
+      stroke: $main-color;
+    }
   }
 }
 </style>
