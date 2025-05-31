@@ -1,0 +1,37 @@
+[
+  {
+    "model": "Kia Rio 2018 г",
+    "trim": "Эконом",
+    "schedule": "7/0",
+    "image": "kia2018.jpg",
+    "price_per_day": 1500
+  },
+  {
+    "model": "Kia Rio 2021 г",
+    "trim": "Эконом",
+    "schedule": "7/0",
+    "image": "kia2021.png",
+    "price_per_day": 1700
+  },
+  {
+    "model": "Skoda Rapid 2021 г",
+    "trim": "Эконом",
+    "schedule": "7/0",
+    "image": "skoda2021.png",
+    "price_per_day": 1700
+  },
+  {
+    "model": "Kia Optima 2020 г",
+    "trim": "Комфорт",
+    "schedule": "7/0",
+    "image": "kia2020.png",
+    "price_per_day": 2700
+  },
+  {
+    "model": "Chery Tiggo 7 pro 2023 г",
+    "trim": "Комфорт",
+    "schedule": "7/0",
+    "image": "chery2023.png",
+    "price_per_day": 3000
+  }
+]

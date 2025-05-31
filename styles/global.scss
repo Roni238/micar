@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: $main-font;
+}
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  @include laptop {
+    font-size: 18px;
+  }
+}
+a {
+  color: $gray-color;
+  text-decoration: none;
+}
+button {
+  background: none;
+  border: none;
+}
+ul {
+  display: flex;
+  list-style: none;
+}
+svg {
+  display: block;
+  fill: $white-color;
+}
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 2rem;
+  color: $dark-gray;
+  text-align: center;
+}
+h3 {
+  font-size: 1.25rem;
+  color: $dark-gray;
+}
+
+.no-scroll {
+  overflow: hidden;
+}

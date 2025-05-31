@@ -1,0 +1,19 @@
+{
+  "telegram": {
+    "href": "https://t.me/ParkProlar",
+    "label": "Написать в Telegram",
+    "title": "Telegram",
+    "icon": "telegram-icon"
+  },
+  "whatsapp": {
+    "href": "https://wa.me/79309993344",
+    "label": "Написать в WhatsApp",
+    "title": "WhatsApp",
+    "icon": "whatsapp-icon"
+  },
+  "phone": {
+    "href": "tel:+7-495-231-00-43",
+    "label": "Позвонить по номеру +7-495-231-00-43",
+    "title": "+7-495-231-00-43"
+  }
+}
