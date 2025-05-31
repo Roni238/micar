@@ -9,7 +9,7 @@
       </p>
 
       <div class="banner__buttons">
-        <NuxtLink to="#catalog" class="banner__bnt" aria-label="Перейти к о нас"
+        <NuxtLink to="#about" class="banner__bnt" aria-label="Перейти к о нас"
           >Узнать больше</NuxtLink
         >
         <NuxtLink
