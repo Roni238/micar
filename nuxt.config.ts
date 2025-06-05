@@ -47,11 +47,11 @@ export default defineNuxtConfig({
           property: 'og:description',
           content: 'Первый день аренды — бесплатно!',
         },
-        {
-          property: 'og:image',
-          content: 'https://taxi-swart.vercel.app/ad.jpg',
-        },
-        { property: 'og:url', content: 'https://prolar.ru' },
+        // {
+        //   property: 'og:image',
+        //   content: 'https://taxi-swart.vercel.app/ad.jpg',
+        // },
+        // { property: 'og:url', content: 'https://prolar.ru' },
       ],
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     },
