@@ -9,12 +9,12 @@
       </p>
 
       <div class="banner__buttons">
-        <NuxtLink to="#about" class="banner__bnt" aria-label="Перейти к о нас"
+        <NuxtLink to="#about" class="banner__btn" aria-label="Перейти к о нас"
           >Узнать больше</NuxtLink
         >
         <NuxtLink
           to="#catalog"
-          class="banner__bnt banner__bnt--cta"
+          class="banner__btn banner__btn--cta"
           aria-label="На главную"
           >Стать водителем</NuxtLink
         >
@@ -62,14 +62,20 @@
       flex-direction: row;
     }
   }
-  &__bnt {
-    box-shadow: 0px 10px 10px 0px rgba(15, 16, 17, 0.1);
+  &__btn {
     border-radius: 12px;
     color: #fff;
     font-size: 1.5rem;
     border: 2px solid white;
     padding: 8px 16px;
     text-align: center;
+    box-shadow: 0 0 0 transparent;
+    transition: box-shadow 0.2s ease-in-out;
+
+    &:hover {
+      box-shadow: 4px 4px 10px #0f101136;
+    }
+
     @include tablet {
       width: max-content;
     }
