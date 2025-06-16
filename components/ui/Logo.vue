@@ -11,7 +11,7 @@
 <style lang="scss" scoped>
 
 .logo svg {
-  width: 70px;
-  height: 70px;
+  width: 62px;
+  height: 62px;
 }
 </style>

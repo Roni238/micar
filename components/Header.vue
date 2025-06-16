@@ -63,7 +63,7 @@ a {
   width: 100%;
   box-shadow: 0px 10px 10px 0px rgba(15, 16, 17, 0.15);
   position: sticky;
-  background-color: #fff;
+  background-color: $white-color;
   top: 0px;
   @include tablet {
     height: 70px;
