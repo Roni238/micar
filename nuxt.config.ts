@@ -37,7 +37,7 @@ export default defineNuxtConfig({
           name: 'description',
           content: 'Аренда авто в Москве. Первый день аренды — бесплатно!',
         },
-        { name: 'theme-color', content: '#ffc600' },
+        { name: 'theme-color', content: '#2f6aec' },
 
         { property: 'og:site_name', content: 'Мицар: аренда авто в Москве' },
         { property: 'og:type', content: 'website' },
