@@ -1,244 +1,164 @@
 <template>
-  <section class="catalog" aria-labelledby="catalog-title">
+  <section class="catalog">
     <div class="catalog__container">
-      <h2 id="catalog-title" class="catalog__title">КАТАЛОГ АВТО</h2>
+      <h2 class="catalog__title">КАТАЛОГ АВТО</h2>
 
-      <Swiper
-        :modules="[Navigation]"
-        :space-between="20"
-        :breakpoints="{
-          320: { slidesPerView: 1 },
-          768: { slidesPerView: 2 },
-          1596: { slidesPerView: 4 },
-        }"
-        @swiper="setSwiperInstance"
-        @slide-change="updatePagination"
-        id="car-gallery"
-      >
-        <SwiperSlide
-          v-for="(car, index) in cars"
-          :key="`${car.model}-${index}`"
-          :aria-label="`Модель ${car.model}, комплектация ${car.trim}`"
-          role="group"
-          aria-roledescription="slide"
+      <ul class="catalog__list">
+        <li 
+          v-for="(car, index) in cars" 
+          :key="`${car.model}-${index}`" 
+          class="catalog__item"
         >
-          <article class="swiper-slide__content">
-            <img
-              :src="`/cars/${car.image}`"
-              :alt="`${car.model} ${car.trim}`"
-              class="swiper-slide__image"
-              loading="lazy"
-            />
-            <div class="swiper-slide__text">
-              <h3 class="swiper-slide__title">{{ car.model }}</h3>
-              <p class="swiper-slide__discription">{{ car.trim }}</p>
+          <article class="card">
+            <div class="card__image-wrapper">
+              <img
+                :src="`/cars/${car.image}`"
+                :alt="`${car.model} ${car.trim}`"
+                class="card__image"
+                loading="lazy"
+              />
+              <span class="card__note">*возможен график 6/1</span>
+            </div>
 
-              <footer class="swiper-slide__footer">
-                <div>
-                  <mark>{{ car.price_per_day }} ₽</mark>
-                  /в сутки
+            <div class="card__content">
+              <h3 class="card__title">{{ car.model }}</h3>
+              <p class="card__description">{{ car.trim }}</p>
+
+              <footer class="card__footer">
+                <div class="card__price">
+                  <span class="card__price-value">{{ car.price_per_day }} ₽</span>
+                  <span class="card__price-label">/в сутки</span>
                 </div>
-
-                <div>график {{ car.schedule }}</div>
+                <div class="card__schedule">график {{ car.schedule }}</div>
               </footer>
             </div>
-            <div class="swiper-slide__note">*возможен график 6/1</div>
           </article>
-        </SwiperSlide>
-      </Swiper>
-
-      <div class="navigation" aria-controls="car-gallery">
-        <div class="navigation__counter" aria-live="polite">
-          {{ swiperState.currentSlide }} из {{ maxSwipes }}
-        </div>
-
-        <div class="navigation__buttons">
-          <button
-            @click="slidePrev"
-            class="navigation__button navigation__button--left"
-            :class="{ 'navigation__button--disabled': isBeginning }"
-            :disabled="isBeginning"
-            aria-label="Предыдущий слайд"
-          >
-            <svg aria-hidden="true" focusable="false">
-              <use xlink:href="/icons.svg#arrow"></use>
-            </svg>
-          </button>
-
-          <button
-            @click="slideNext"
-            class="navigation__button"
-            :class="{ 'navigation__button--disabled': isEnd }"
-            :disabled="isEnd"
-            aria-label="Следующий слайд"
-          >
-            <svg aria-hidden="true" focusable="false">
-              <use xlink:href="/icons.svg#arrow"></use>
-            </svg>
-          </button>
-        </div>
-      </div>
+        </li>
+      </ul>
     </div>
   </section>
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
-import { Swiper, SwiperSlide } from 'swiper/vue'
-import { Navigation } from 'swiper/modules'
-
-import 'swiper/css'
 import cars from 'public/cars.json'
-
-const swiperState = ref({
-  instance: null,
-  currentSlide: 1,
-  totalSlides: 0,
-  slidesPerView: 1,
-})
-
-const maxSwipes = computed(() =>
-  Math.max(
-    swiperState.value.totalSlides - swiperState.value.slidesPerView + 1,
-    1
-  )
-)
-
-const isBeginning = computed(() => swiperState.value.currentSlide === 1)
-const isEnd = computed(() => swiperState.value.currentSlide >= maxSwipes.value)
-
-const setSwiperInstance = (swiper) => {
-  swiperState.value = {
-    ...swiperState.value,
-    instance: swiper,
-    totalSlides: swiper.slides.length,
-    slidesPerView: swiper.params.slidesPerView,
-  }
-
-  swiper.on('resize', () => {
-    swiperState.value.slidesPerView = swiper.params.slidesPerView
-  })
-}
-
-const updatePagination = () => {
-  if (swiperState.value.instance) {
-    swiperState.value.currentSlide = swiperState.value.instance.activeIndex + 1
-  }
-}
-
-const slidePrev = () => swiperState.value.instance?.slidePrev()
-const slideNext = () => swiperState.value.instance?.slideNext()
 </script>
 
 <style lang="scss" scoped>
 .catalog {
   background-color: $main-color;
+  padding: $section-padding 0;
+
   &__container {
     @include container;
   }
+
   &__title {
     color: $white-color;
-    margin-bottom: 1.5rem;
+    margin-bottom: 24px;
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @media (max-width: 1595px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: 1200px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 767px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    margin: 0;
+    padding: 0;
   }
 }
 
-.swiper-slide {
-  background: #f0f0f0;
-  overflow: hidden;
-  box-sizing: border-box;
+.card {
+  background: $white-color;
   border-radius: 20px;
-  white-space: pre-line;
-  position: relative;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 
-  &__header {
-    display: flex;
-    justify-content: space-between;
-    font-size: 1.25rem;
-    height: 50px;
+  &__image-wrapper {
+    position: relative;
   }
 
   &__image {
-    object-fit: cover;
     width: 100%;
     height: 225px;
+    object-fit: cover;
+    display: block;
   }
 
-  &__text {
-    padding: 12px 18px;
-  }
-  &__title {
-    font-size: 1.4rem;
-  }
-  &__discription {
-    font-size: 1.25rem;
-  }
-  &__footer {
-    margin-top: 20px;
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-
-    mark {
-      color: $main-color;
-      font-size: 1.4rem;
-      background: none;
-    }
-  }
   &__note {
     position: absolute;
+    top: 0;
+    right: 0;
     padding: 4px 12px;
-    border-bottom-left-radius: 10px;
     background: $white-color;
     color: $text-color;
-    right: 0;
-    top: 0;
-  }
-}
-
-.navigation {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-top: 1px solid #e7e7e7;
-  padding-top: $section-padding;
-  gap: 20px;
-  margin-top: $section-padding;
-
-  &__counter {
-    font-size: 1.2rem;
-    color: #fff;
-    min-width: 60px;
-    text-align: center;
+    font-size: 12px;
+    border-bottom-left-radius: 10px;
   }
 
-  &__buttons {
+  &__content {
+    padding: 12px 18px;
+    flex-grow: 1;
     display: flex;
-    gap: 20px;
+    flex-direction: column;
   }
 
-  &__button {
-    width: 40px;
-    height: 40px;
-    border: 1px solid #fff;
-    border-radius: 50%;
+  &__title {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+    color: $text-color;
+  }
 
-    fill: #fff;
-    cursor: pointer;
+  &__description {
+    font-size: 16px;
+    margin: 0 0 16px 0;
+    color: $text-color;
+  }
+
+  &__footer {
+    margin-top: auto;
     display: flex;
-    transition: opacity 0.3s ease;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
 
-    svg {
-      height: 100%;
-      width: 100%;
+  &__price {
+    &-value {
+      color: $main-color;
+      font-size: 20px;
+      font-weight: 700;
     }
 
-    &--left {
-      transform: rotate(180deg);
+    &-label {
+      font-size: 14px;
+      color: $text-color;
     }
+  }
 
-    &--disabled {
-      opacity: 0.6;
-    }
+  &__schedule {
+    font-size: 14px;
+    color: $text-color;
   }
 }
 </style>

@@ -3,21 +3,21 @@
     "model": "Kia Rio 2018 г",
     "trim": "Эконом",
     "schedule": "7/0",
-    "image": "kia2018.jpg",
+    "image": "kia2018.png",
     "price_per_day": 1500
   },
   {
     "model": "Kia Rio 2021 г",
     "trim": "Эконом",
     "schedule": "7/0",
-    "image": "kia2021.png",
+    "image": "kia2021.webp",
     "price_per_day": 1700
   },
   {
     "model": "Skoda Rapid 2021 г",
     "trim": "Эконом",
     "schedule": "7/0",
-    "image": "skoda2021.png",
+    "image": "skoda2021.jpg",
     "price_per_day": 1700
   },
   {

@@ -1,11 +1,31 @@
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-    <symbol id="logo-icon" viewBox="0 0 186 42" fill="none" >
-        <circle cx="140" cy="22" r="20" fill="#FFC600" />
-        <path
-        d="M2 41V23.93m0 0V6.86S22.036 3 22.036 15.53 2 23.93 2 23.93zM30.05 41V23.93m0 0V6.86s18.534-2.574 18.534 8.67c0 11.245-18.533 8.4-18.533 8.4zm0 0 18.534 16.154M95.67 3v37.084h24.213m8.847.916 4.177-10.53m32.317-7.456H146.462m18.761 0v17.07m0-17.07s17.773 2.845 17.773-8.4c0-11.244-17.773-8.67-17.773-8.67v17.07zm0 0L185 40.084m-49.166-17.07-2.928 7.456m2.928-7.456h10.628m-10.628 0h-15.952l13.024 7.456m2.928-7.456 6.839-17.07 3.789 17.07m-13.556 7.456 16.029 7.875-2.473-15.33m-89.996 0s0-17.07 14.786-17.07c14.787 0 14.787 17.07 14.787 17.07s0 17.07-14.787 17.07-14.786-17.07-14.786-17.07z"
-        stroke="#000"
-        stroke-width="3"
-        />
+    <symbol id="logo-icon" width="407" height="377" viewBox="0 0 407 377" fill="none" >
+        <path d="M171.5 152.5L204.5 192" stroke="white" stroke-width="14" stroke-linecap="round"/>
+        <path d="M45 53L122 80L153.5 125" stroke="white" stroke-width="15" stroke-linecap="round"/>
+        <circle cx="162.5" cy="139.5" r="14" stroke="white" stroke-width="15"/>
+        <circle cx="201" cy="272" r="13.5" stroke="white" stroke-width="15"/>
+        <circle cx="307" cy="329" r="5" stroke="white" stroke-width="27"/>
+        <circle cx="215.5" cy="200.5" r="8.5" stroke="white" stroke-width="10"/>
+        <circle cx="350.5" cy="263.5" r="15.5" stroke="white" stroke-width="18"/>
+        <circle cx="26" cy="47" r="19" stroke="white" stroke-width="14"/>
+        <path d="M59.5 223.5L40 244.5" stroke="white" stroke-width="12" stroke-linecap="round"/>
+        <path d="M39.5 224.5L60.5 244" stroke="white" stroke-width="12" stroke-linecap="round"/>
+        <path d="M126.5 356.5H156" stroke="white" stroke-width="12" stroke-linecap="round"/>
+        <path d="M206 6L186.5 27" stroke="white" stroke-width="12" stroke-linecap="round"/>
+        <path d="M186 7L207 26.5" stroke="white" stroke-width="12" stroke-linecap="round"/>
+        <path d="M363 80V107.5M141 343V370.5" stroke="white" stroke-width="12" stroke-linecap="round"/>
+        <path d="M348 93H378.5M59.5 223.5L40 244.5M39.5 224.5L60.5 244" stroke="white" stroke-width="12" stroke-linecap="round"/>
+        <circle cx="15" cy="351" r="7" fill="white"/>
+        <circle cx="400" cy="186" r="7" fill="white"/>
+        <path d="M112 93L114 82.5L106.5 73H117.5L122.5 62.5L127.5 73H139.5L131 82.5L133.5 93L122.5 89.5L112 93Z" fill="#E46E7E" stroke="white" stroke-linecap="round"/>
+        <circle cx="389" cy="365" r="7" fill="white"/>
+        <circle cx="240" cy="92" r="8" fill="white"/>
+        <circle cx="46" cy="131" r="8" fill="white"/>
+        <path d="M123 61C132.941 61 141 69.0589 141 79C141 88.9411 132.941 97 123 97C113.059 97 105 88.9411 105 79C105 69.0589 113.059 61 123 61Z" stroke="#575886" stroke-width="2"/>
+        <path d="M214.5 281L292 324" stroke="white" stroke-width="14" stroke-linecap="round"/>
+        <path d="M338.5 285.5L316 315" stroke="white" stroke-width="14" stroke-linecap="round"/>
+        <path d="M228.5 205.5L333 252" stroke="white" stroke-width="14" stroke-linecap="round"/>
+        <path d="M212.5 213L204 256.5" stroke="white" stroke-width="13" stroke-linecap="round"/>
     </symbol>
 
 
